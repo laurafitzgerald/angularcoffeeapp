@@ -1,0 +1,47 @@
+<div class="jumbotron text-center">
+    <h1>Add Coffee Page!</h1>
+
+    <p>{{ message }}</p>
+
+    <div ng-controller="coffeeController">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+                <form ng-submit="addCoffee()"
+                      style="margin-top:30px;">
+
+
+                    <div class="form-group" align="center">
+                        Coffee Name
+                        <input type="string"
+                               class="form-control"
+                               placeholder="Name"
+                               ng-model="coffee.name"
+                               ng-style="{'width': 250 + 'px'}"/>
+                    </div>
+                    <div class="form-group" align="center">
+                        Coffee Shop
+                        <input type="string"
+                               class="form-control"
+                               placeholder="Shop"
+                               ng-model="coffee.shop"
+                               ng-style="{'width': 250 + 'px'}"/>
+                    </div>
+                    Price
+                    <div class="form-group" align="center">
+                        <input type="number"
+                               step="0.01"
+                               class="form-control"
+                               placeholder="Amount"
+                               ng-model="coffee.price"
+                               ng-style="{'width': 100 + 'px'}"/>
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Coffee</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    </div>

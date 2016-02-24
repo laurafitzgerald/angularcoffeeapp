@@ -1,0 +1,38 @@
+
+
+a {
+  color: #00B7FF;
+}
+.gi-small{font-size : 0.75em;}
+.gi-1x{font-size: 1em;}
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
+
+.star{
+  background-color: #BCBCBC;
+  padding: .75em;
+  margin : .75em;
+  border-radius: 20px;
+
+}
+
+.coffee-row{
+
+
+}
+.navbar{
+  background-color: #063C63;
+}
+.coffee-table tr td{
+  padding:15px;
+}
+.coffee-table{
+
+  height:55px;
+  font-size:20px;
+
+
+
+}

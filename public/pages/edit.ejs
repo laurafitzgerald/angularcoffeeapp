@@ -1,0 +1,67 @@
+<div class="jumbotron text-center">
+    <h1>Edit Coffee Page!</h1>
+
+    <p>{{ message }}</p>
+
+    <div ng-controller="editController">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+                <form ng-submit="editCoffee(coffee._id)"
+                      style="margin-top:30px;">
+
+                    <div class="form-group" align="center">
+                    <p>Favourite</p>
+                           <a class="glyphicon glyphicon-star gi-5x" ng-click="favourite(coffee._id)" style="color:blue " ng-style ="{red : coffee.favourite}">
+                               </a>
+
+                    </div>
+                    <div class="form-group" align="center">
+                        Coffee Name
+                    <input type="string"
+                               class="form-control"
+                               ng-model="coffee.name"
+                               ng-style="{'width': 250 + 'px'}"/>
+                    </div>
+                    <div class="form-group" align="center">
+                        Coffee Shop
+                     <input type="string"
+                               class="form-control"
+                               ng-model="coffee.shop"
+                               ng-style="{'width': 250 + 'px'}"/>
+                    </div>
+
+                    <div class="form-group" align="center">
+                        Price
+                       <input type="number"
+                               step="0.01"
+                               class="form-control"
+                               ng-model="coffee.price"
+                               ng-style="{'width': 100 + 'px'}"/>
+
+
+                    </div>
+
+            <div class = "form-group" align = "center">
+                Star Rating
+                <div>
+                <span class="glyphicon glyphicon-star gi-3x"  style="color:gray " ng-click="setStar(1, coffee._id)" >
+                               </span>
+                 <span class="glyphicon glyphicon-star gi-3x"  style="color:gray " ng-click="setStar(2, coffee._id)">
+                               </span>
+                 <span class="glyphicon glyphicon-star gi-3x"  style="color:gray " ng-click="setStar(3, coffee._id)">
+                               </span>
+                 <span class="glyphicon glyphicon-star gi-3x"  style="color:gray " ng-click="setStar(4, coffee._id)">
+                               </span>
+                 <span class="glyphicon glyphicon-star gi-3x"  style="color:gray " ng-click="setStar(5, coffee._id)">
+                               </span>
+                </div>
+            </div>
+                    <button type="submit" class="btn btn-primary">Edit Coffee</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
