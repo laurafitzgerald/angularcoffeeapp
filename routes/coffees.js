@@ -3,7 +3,16 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/coffeematedb');
+var options =  {server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } },
+user: 'admin', pass: 'pass' };
+
+var mongodbUri = 'mongodb://ds015878.mongolab.com:15878/heroku_6m0p4wv0'
+var mongooseUri = uriUtil.formatMongoose(mongodbUri)
+
+
+//mongoose.connect('mongodb://localhost:27017/coffeematedb');
+mongoose.connect(mongooseUri,options);
 var db = mongoose.connection;
 
 
