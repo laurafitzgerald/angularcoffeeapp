@@ -1,22 +1,54 @@
 <html ng-app="CoffeeMateWebApp" >
 <head>
   <title>CoffeeMate Web App</title>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" />
   <link rel="stylesheet"  type="text/css" href="stylesheets/style.css"/>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-route.js"></script>
 
+
+
   <script src="/javascripts/angularApp.js"></script>
   <script src="/javascripts/controllers/maincontroller.js"></script>
   <script src="/javascripts/controllers/coffeecontroller.js"></script>
   <script src="/javascripts/controllers/coffeescontroller.js"></script>
   <script src="/javascripts/controllers/aboutcontroller.js"></script>
+  <script src="/javascripts/controllers/signincontroller.js"></script>
+
 
   <script src="/javascripts/controllers/editcontroller.js"></script>
   <script src="/javascripts/controllers/contactcontroller.js"></script>
 
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
+
+
+  <script >
+    function favouritetoggle() {
+
+        console.log("script called");
+        $('#favourite-toggle').toggleClass('glyphicon glyphicon-star gi-5x favourite-true').toggleClass('glyphicon glyphicon-star gi-5x favourite-false');
+   //{'glyphicon glyphicon-star gi-5x favourite-true': favourite, 'glyphicon glyphicon-star gi-5x favourite-false': !favourite}
+    }
+
+    function startoggle(star) {
+        console.log("star script called");
+      console.log(star.id);
+      //var id = $("#"+star.id);
+      star.value.toggleClass('glyphicon glyphicon-star gi-3x gold').toggleClass('glyphicon glyphicon-star gi-3x favourite-false');
+
+    }
+  </script>
+
+  <script>// <![CDATA[
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/client:plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+    // ]]></script>
 </head>
 
 <body ng-controller="mainController">
@@ -31,7 +63,12 @@
     <ul class="nav navbar-nav navbar-right">
       <div class="navbar-right">
         <button type="button" class="btn btn-default navbar-btn btn-success">Register</button>
-        <button type="button" class="btn btn-default navbar-btn btn-primary">Log In</button>
+        <span id="googleSignIn">
+    <span id="signInButton">
+    </span>
+
+
+</span>
       </div>
       <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
       <li><a href="#coffee"><i class="fa fa-money"></i> Add Coffee</a></li>

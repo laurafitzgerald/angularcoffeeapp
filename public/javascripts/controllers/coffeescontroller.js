@@ -8,20 +8,20 @@ app.controller('coffeesController', ['$scope', '$location', '$http',  function($
 
     $scope.edit =function(id){
         $location.path('/edit/'+id);
-        console.log(id);
-    }
+
+    };
     function findAll(){
         $http.get('/coffees')
             .success(function(data){
                 $scope.coffees = data;
-                console.log(data);
+
             })
             .error(function(data){
                 console.log('Error: '+ data);
             });
 
 
-    };
+    }
 
     $scope.delete = function(id){
         console.log("delete button clicked");

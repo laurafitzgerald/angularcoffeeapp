@@ -6,33 +6,33 @@
     <div ng-controller="coffeesController as list">
         <table align="center" valign="middle">
             <tbody ng-repeat="coffee in coffees | orderBy:'-star'">
-            <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="..."middle; >
+            <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle"; >
             <td>
                 <div class="star">
                <p><span class="glyphicon glyphicon-star gi-small">
 
-                {{coffee.star}}
-                        </span></p>
+
+                        </span>{{coffee.star}}</p>
                 </span>
                     </div>
 
             </td>
             <td>
-                <span style="..."middle";>
+                <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>
                 {{coffee.name}}
                 </span>
 
             </td>
             <td>
-                <span style="..."middle";>
+                <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>
                 {{coffee.shop}}
                 </span>
 
             </td>
             <td>
                 <span class="glyphicon glyphicon-euro">
-                {{coffee.price}}
-                </span>
+
+                </span>       {{coffee.price | number:2}}
 
             </td>
 

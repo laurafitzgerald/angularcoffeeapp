@@ -10,6 +10,45 @@ a {
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
 
+.favourite-true{
+  color: #00B7FF;
+
+
+
+}
+.favourite-false{
+
+  color: gray;
+
+
+}
+.rating > span:hover:before {
+  color:gold;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: gray;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+
+
+  left: 0;
+  color: gold;
+}
+
+.gold{
+  color:gold;
+}
+
 .star{
   background-color: #BCBCBC;
   padding: .75em;
@@ -26,7 +65,8 @@ a {
   background-color: #063C63;
 }
 .coffee-table tr td{
-  padding:15px;
+  padding:20px;
+  margin: 20px;
 }
 .coffee-table{
 
