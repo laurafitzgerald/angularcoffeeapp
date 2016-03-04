@@ -15,9 +15,14 @@
 
                     <div class="form-group" align="center">
                     <p>Favourite</p>
-                        <span ng-click="favourite(coffee._id)" href="#" onclick="favouritetoggle()" >
-                            <i  id="favourite-toggle" class="glyphicon glyphicon-star gi-5x favourite-true"></i></span>
-
+                        <span ng-click="favourite()"  onclick="favouritetoggle()" >
+                            <div ng-if="coffee.favourite == true">
+                            <i  id="favourite-toggle" class="glyphicon glyphicon-star gi-5x favourite-true"></i>
+                            </div>
+                            <div ng-if="coffee.favourite == false">
+                                <i  id="favourite-toggle" class="glyphicon glyphicon-star gi-5x favourite-false"></i>
+                            </div>
+                            </span>
                     </div>
                     <div class="form-group" align="center">
                         Coffee Name

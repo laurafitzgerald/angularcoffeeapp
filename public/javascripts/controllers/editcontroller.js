@@ -12,7 +12,7 @@ app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$
             .success(function (data) {
                 $scope.coffee = data;
 
-
+                $scope.coffee._id = data[0]._id;
                 $scope.coffee.name = data[0].name;
                 $scope.coffee.shop = data[0].shop;
                 $scope.coffee.price = data[0].price;
@@ -39,15 +39,15 @@ app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$
 
     $scope.isFavourite = function(){
         console.log($scope.coffee);
-        return coffee.favourite;
+        return $scope.coffee.favourite;
     }
-    $scope.favourite = function(id){
-        console.log("you clicked the start");
-            //if($scope.coffee.favourite == true)
-               // $scope.coffee.favourite = false;
-            //else
-                //$scope.coffee.favourite = true;
-            //console.log($scope.coffee.favourite);
+    $scope.favourite = function(){
+        console.log("you clicked the star");
+            if($scope.coffee.favourite == true)
+                $scope.coffee.favourite = false;
+            else
+                $scope.coffee.favourite = true;
+            console.log($scope.coffee.favourite);
            // $route.reload();
 
 
@@ -56,10 +56,11 @@ app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$
 
 
     $scope.editCoffee = function(id){
+        console.log(id);
         $scope.coffee[0].name = $scope.coffee.name;
         $scope.coffee[0].shop = $scope.coffee.shop;
         $scope.coffee[0].price = $scope.coffee.price;
-        $scope.coffee[0].favourite = $scope.tempfavourite;
+        $scope.coffee[0].favourite = $scope.coffee.favourite;
 
         $http.put('/coffees/'+$routeParams.id, $scope.coffee)
             .success(function(data){
