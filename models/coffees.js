@@ -6,7 +6,10 @@ var CoffeeSchema = new mongoose.Schema({
     star: {type: Number, default: 0},
     name: String,
     shop: String,
-    price: Number
+    price: Number,
+    lat: Number,
+    lng: Number,
+    username: String
 
 });
 

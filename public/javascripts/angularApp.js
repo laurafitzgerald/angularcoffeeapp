@@ -28,11 +28,13 @@ app.config(function($routeProvider) {
             templateUrl : 'pages/edit.ejs',
             controller : 'editController'
         })
-
-        // route for the coffees page
         .when('/coffees', {
             templateUrl : 'pages/coffees.ejs',
             controller  : 'coffeesController'
+        })
+        .when('/login', {
+            templateUrl: 'pages/login.ejs',
+            controller: 'logController'
         });
 
 

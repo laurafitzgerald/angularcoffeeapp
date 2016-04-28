@@ -32,6 +32,10 @@ app.post('/coffees', coffees.addCoffee);
 app.delete('/coffees/:id', coffees.deleteCoffee);
 app.put('/coffees/:id', coffees.updateCoffee);
 
+app.get('/users', users.getUsers);
+app.post('/users', users.addUser);
+app.get('/auth', users.authenticate);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
