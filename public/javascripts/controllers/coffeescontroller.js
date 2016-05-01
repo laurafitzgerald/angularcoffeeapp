@@ -1,8 +1,12 @@
 var app = angular.module('CoffeeMateWebApp');
 
-app.controller('coffeesController', ['$scope', '$location', '$http',  function($scope, $location, $http) {
+app.controller('coffeesController', ['$scope', '$location', '$http', 'NgMap',  '$interval', function($scope, $location, $http, NgMap,  $interval) {
     // create a message to display in our view
     $scope.message = 'Coffees Page!';
+
+
+
+
 
     findAll();
 
@@ -14,6 +18,7 @@ app.controller('coffeesController', ['$scope', '$location', '$http',  function($
         $http.get('/coffees')
             .success(function(data){
                 $scope.coffees = data;
+                console.log($scope.coffees);
 
             })
             .error(function(data){

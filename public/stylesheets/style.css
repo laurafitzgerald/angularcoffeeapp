@@ -16,6 +16,12 @@ a {
 
 
 }
+
+.custom-marker {
+  /* margin-top: 10px; */
+  background: white;
+  padding: 5px;
+}
 .favourite-false{
 
   color: gray;
@@ -75,4 +81,9 @@ a {
 
 
 
+}
+
+.map{
+
+  max-length: 500dp;
 }

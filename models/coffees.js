@@ -1,5 +1,7 @@
 
 var mongoose = require('mongoose');
+require('mongoose-long')(mongoose);
+var SchemaTypes = mongoose.Schema.Types;
 
 var CoffeeSchema = new mongoose.Schema({
     favourite: {type: Boolean, default : false},
@@ -7,8 +9,8 @@ var CoffeeSchema = new mongoose.Schema({
     name: String,
     shop: String,
     price: Number,
-    lat: Number,
-    lng: Number,
+    location_lat: Number,
+    location_lng: Number,
     username: String
 
 });

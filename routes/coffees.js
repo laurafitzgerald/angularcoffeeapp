@@ -59,6 +59,8 @@ router.addCoffee = function(req, res) {
     coffee.name = req.body.name;
     coffee.shop = req.body.shop;
     coffee.price = req.body.price;
+    coffee.location_lat = req.body.location_lat;
+    coffee.location_lng = req.body.location_lng;
 
     console.log('Adding coffee' + JSON.stringify(coffee));
 

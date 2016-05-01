@@ -20,11 +20,20 @@
   <script src="/javascripts/controllers/coffeescontroller.js"></script>
   <script src="/javascripts/controllers/aboutcontroller.js"></script>
   <script src="/javascripts/controllers/logcontroller.js"></script>
-
-
-
   <script src="/javascripts/controllers/editcontroller.js"></script>
   <script src="/javascripts/controllers/contactcontroller.js"></script>
+  <script src="/javascripts/controllers/mapcontroller.js"></script>
+
+
+  <!--maps-->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqZsJT05wrDHUvNBtpECIkR_ghXl98eU8"
+          type="text/javascript"></script>
+  <script src="/dist/ng-map.min.js"></script>
+  <script src="scripts/script-tags-for-development.js"></script>
+  <script src="scripts/markerclusterer.js"></script>
+
+
+
 
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
 
@@ -54,6 +63,10 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
     // ]]></script>
+
+  <style>
+    map, div[map] {display:block; width:600px; height:400px;}
+  </style>
 </head>
 
 <body ng-controller="mainController">
