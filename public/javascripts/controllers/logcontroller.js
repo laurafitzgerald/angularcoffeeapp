@@ -1,15 +1,11 @@
 var app = angular.module('CoffeeMateWebApp');
 
 
-app.controller('logController', ['$route', '$scope', '$http','$routeParams', '$location', function($route, $scope, $http ,$routeParams, $location ) {
+app.controller('logController', ['$route', '$scope', '$http','$routeParams', '$location', 'loggedIn', function($route, $scope, $http ,$routeParams, $location ,loggedIn) {
 
     $scope.userlogin = {};
 
-
-
-
-
-
+    $scope.loggedIn = loggedIn.loggedIn;
 
 
     $scope.login = function(){
@@ -22,7 +18,13 @@ app.controller('logController', ['$route', '$scope', '$http','$routeParams', '$l
                 console.log(response);
                 if(response.message==='valid'){
                     console.log("Valid details");
+                    loggedIn.loggedIn = 'true';
+                    loggedIn.username = $scope.userlogin.username;
+                    console.log($scope.loggedIn);
+                    console.log(loggedIn.loggedIn);
+                    console.log(loggedIn.username);
                     $location.path('/coffees');
+
 
                 }else if(response.message==="invalid"){
                     console.log("Invalid details");

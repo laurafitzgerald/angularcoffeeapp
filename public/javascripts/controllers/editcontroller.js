@@ -1,8 +1,15 @@
 var app = angular.module('CoffeeMateWebApp');
 
 
-app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$location', function($route, $scope, $http ,$routeParams, $location ) {
-// create a message to display in our view
+app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$location', 'loggedIn', function($route, $scope, $http ,$routeParams, $location, loggedIn ) {
+
+    $scope.loggedIn = loggedIn.loggedIn;
+    console.log($scope.loggedIn);
+    if($scope.loggedIn==='false'){
+        $location.path('/login');
+    }
+
+
     $scope.message = 'Update a Coffee';
     //$scope.coffee.id = $routeParams.id;
 
@@ -11,15 +18,8 @@ app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$
         $http.get('/coffees/'+id)
             .success(function (data) {
                 $scope.coffee = data;
-
-                $scope.coffee._id = data[0]._id;
-                $scope.coffee.name = data[0].name;
-                $scope.coffee.shop = data[0].shop;
-                $scope.coffee.price = data[0].price;
-                $scope.coffee.favourite = data[0].favourite;
-                $scope.tempfavourite = $scope.coffee.favourite;
-                $scope.coffee.star = data[0].star;
                 console.log($scope.coffee);
+
                 return $scope.coffee;
 
             })
@@ -32,8 +32,8 @@ app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$
     var id  = ($routeParams.id);
 
     console.log(id);
-    var coffee = findOne(id);
-    console.log(coffee);
+    findOne(id);
+
     console.log($scope.coffee);
 
 
@@ -51,16 +51,18 @@ app.controller('editController', ['$route', '$scope', '$http','$routeParams', '$
            // $route.reload();
 
 
-    }
+    };
+    $scope.setStar = function(num){
+
+        $scope.coffee.star = num;
+        console.log("star clicked " + $scope.coffee.star);
+    };
 
 
 
     $scope.editCoffee = function(id){
         console.log(id);
-        $scope.coffee[0].name = $scope.coffee.name;
-        $scope.coffee[0].shop = $scope.coffee.shop;
-        $scope.coffee[0].price = $scope.coffee.price;
-        $scope.coffee[0].favourite = $scope.coffee.favourite;
+        console.log($scope.coffee);
 
         $http.put('/coffees/'+$routeParams.id, $scope.coffee)
             .success(function(data){

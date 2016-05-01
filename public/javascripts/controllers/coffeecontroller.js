@@ -1,7 +1,12 @@
 var app = angular.module('CoffeeMateWebApp');
 
-app.controller('coffeeController', ['$scope', '$http', '$location', 'NgMap', function($scope, $http, $location, NgMap) {
+app.controller('coffeeController', ['$scope', '$http', '$location', 'NgMap', 'loggedIn', function($scope, $http, $location, NgMap, loggedIn) {
 
+    $scope.loggedIn = loggedIn.loggedIn;
+    console.log($scope.loggedIn);
+    if($scope.loggedIn==='false'){
+        $location.path('/login');
+    }
 
     NgMap.getMap().then(function(map) {
         console.log(map.getCenter());

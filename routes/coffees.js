@@ -31,7 +31,7 @@ db.once('open', function () {
 
 router.findAll = function(req, res){
 
-    Coffee.find(function (err, coffees) {
+    Coffee.find({"username": req.params.username}, function (err, coffees) {
         if(err)
             res.send(err);
         res.json(coffees);
@@ -46,7 +46,7 @@ router.findOne = function(req, res){
         if(err)
             res.json({message: 'Coffee NOT found!', errmsg : err});
         else
-            res.json(coffee);
+            res.json(coffee[0]);
     })
 
 
@@ -61,6 +61,7 @@ router.addCoffee = function(req, res) {
     coffee.price = req.body.price;
     coffee.location_lat = req.body.location_lat;
     coffee.location_lng = req.body.location_lng;
+    coffee.star = req.body.star;
 
     console.log('Adding coffee' + JSON.stringify(coffee));
 
@@ -76,13 +77,13 @@ router.addCoffee = function(req, res) {
 router.updateCoffee = function(req,res){
 
     var coffee = new Coffee();
-    coffee.name = req.body[0].name;
-    coffee.shop = req.body[0].shop;
-    coffee.price = req.body[0].price;
-    coffee.favourite = req.body[0].favourite;
-    coffee.star = req.body[0].star;
+    coffee.name = req.body.name;
+    coffee.shop = req.body.shop;
+    coffee.price = req.body.price;
+    coffee.favourite = req.body.favourite;
+    coffee.star = req.body.star;
     var id = req.params.id;
-    Coffee.findOneAndUpdate({_id:id}, {$set : {"name": coffee.name, "shop": coffee.shop,  "price": coffee.price, "favourite" : coffee.favourite  }}, {upsert: true},  function(err, coffee){
+    Coffee.findOneAndUpdate({_id:id}, {$set : {"name": coffee.name, "shop": coffee.shop,  "price": coffee.price, "favourite" : coffee.favourite, "star": coffee.star  }}, {upsert: true},  function(err, coffee){
         if(err)
             res.send(err)
         else

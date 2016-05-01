@@ -3,6 +3,7 @@
 
     <p>{{ message }}</p>
 
+
     <div ng-controller="coffeesController as list">
         <div class ="row">
             <div class = "col-sm-6">
@@ -32,11 +33,15 @@
 
                     <td>
                         <div class="star">
-                       <p><span class="glyphicon glyphicon-star gi-small">
+                           <span ng-if="coffee.favourite" class="glyphicon glyphicon-star gi-small blue">
+
+                            </span>
 
 
-                                </span>{{coffee.star}}</p>
-                        </span>
+                            <span ng-if="coffee.favourite===false" class = "glyphicon glyphicon-star gi-small">
+
+                                </span>
+                            {{coffee.star}}
                             </div>
 
                     </td>

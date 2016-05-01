@@ -158,7 +158,7 @@
                 var classNames = element[0].firstElementChild.className;
                 customMarker.addClass('custom-marker');
                 customMarker.addClass(classNames);
-                console.log('customMarker', customMarker, 'classNames', classNames);
+                //console.log('customMarker', customMarker, 'classNames', classNames);
 
                 if (!(options.position instanceof google.maps.LatLng)) {
                     NgMap.getGeoLocation(options.position).then(

@@ -16,6 +16,7 @@
 
                             <div style="  max-length: 100dp;">
                                 <map class = "map" center="Waterford" zoom="16" on-click="mapClicked($event)"  >
+                                    <marker ng-if="coffee.location_lat != undefined" position="{{coffee.location_lat}},{{coffee.location_lng}}" ng-click="mapClicked($event)"></marker>
 
                                 </map>
                             </div>

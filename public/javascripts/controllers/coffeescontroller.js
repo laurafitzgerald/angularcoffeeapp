@@ -1,6 +1,12 @@
 var app = angular.module('CoffeeMateWebApp');
 
-app.controller('coffeesController', ['$scope', '$location', '$http', 'NgMap',  '$interval', function($scope, $location, $http, NgMap,  $interval) {
+app.controller('coffeesController', ['$scope', '$location', '$http', 'NgMap',  '$interval', 'loggedIn', function($scope, $location, $http, NgMap,  $interval, loggedIn) {
+    $scope.loggedIn = loggedIn.loggedIn;
+    console.log($scope.loggedIn);
+    if($scope.loggedIn==='false'){
+        $location.path('/login');
+    }
+
     // create a message to display in our view
     $scope.message = 'Coffees Page!';
 
@@ -45,6 +51,10 @@ app.controller('coffeesController', ['$scope', '$location', '$http', 'NgMap',  '
     }
 
 
+
+    $scope.isFavourite = function(){
+        return $scope.coffee.favourite();
+    };
 
 
 }

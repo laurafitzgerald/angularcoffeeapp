@@ -1,5 +1,13 @@
 var app = angular.module('CoffeeMateWebApp', ['ngRoute', 'ngMap']);
 
+
+
+app.factory('loggedIn', function () {
+    return { loggedIn: 'false',
+                username: ''};
+});
+
+
 app.config(function($routeProvider) {
     $routeProvider
 

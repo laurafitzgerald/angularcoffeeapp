@@ -38,22 +38,6 @@
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
 
 
-  <script >
-    function favouritetoggle() {
-
-        console.log("script called");
-        $('#favourite-toggle').toggleClass('glyphicon glyphicon-star gi-5x favourite-true').toggleClass('glyphicon glyphicon-star gi-5x favourite-false');
-   //{'glyphicon glyphicon-star gi-5x favourite-true': favourite, 'glyphicon glyphicon-star gi-5x favourite-false': !favourite}
-    }
-
-    function startoggle(star) {
-        console.log("star script called");
-      console.log(star.id);
-      //var id = $("#"+star.id);
-      star.value.toggleClass('glyphicon glyphicon-star gi-3x gold').toggleClass('glyphicon glyphicon-star gi-3x favourite-false');
-
-    }
-  </script>
 
   <script>// <![CDATA[
     (function() {
@@ -79,15 +63,7 @@
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-      <div class="navbar-right">
-        <button type="button" class="btn btn-default navbar-btn btn-success">Register</button>
-        <span id="googleSignIn" ng-hide="false">
-    <span id="signInButton">
-    </span>
 
-
-</span>
-      </div>
       <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
       <li><a href="#coffee"><i class="fa fa-money"></i> Add Coffee</a></li>
       <li><a href="#coffees"><i class="fa fa-list"></i> View All Coffees</a></li>

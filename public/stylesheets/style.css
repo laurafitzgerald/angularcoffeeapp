@@ -32,6 +32,18 @@ a {
   color:gold;
 }
 
+.yellow{
+
+  color:gold;
+}
+.gray{
+
+  color:gray;
+}
+.blue{
+  color: blue;
+}
+
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -47,7 +59,7 @@ a {
 .rating > span:hover ~ span:before {
 
 
-  left: 0;
+  right: 0;
   color: gold;
 }
 
